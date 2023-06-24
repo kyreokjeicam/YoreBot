@@ -99,7 +99,6 @@ class WindowsHandler:
         )
 
         for window in self.windows_list:
-            print('essa')
             window_instance_position = Position(window.x, window.y)
             click_coord = Coord(
                 window_instance_position.x + first_instance_game_coord.x,
@@ -120,7 +119,7 @@ class WindowsHandler:
 
     @staticmethod
     def launch_window() -> None:
-        os.system(f"nohup {YORE_EXEC_PATH} &")
+        os.system(f'cd .. ; ./{YORE_EXEC_PATH} --no-sandbox &')
 
     def print_windows(self) -> None:
         for window in self.windows_list:
